@@ -1,4 +1,4 @@
-streamlit==1.36.0
+streamlit==1.35.0
 llama-index==0.10.51
 llama-index-embeddings-gradient==0.1.2
 llama-index-llms-gradient==0.1.2
