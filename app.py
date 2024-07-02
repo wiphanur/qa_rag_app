@@ -27,6 +27,9 @@ def main():
         with st.chat_message(message["role"], avatar = message['avatar']):
             st.markdown(message["content"])
 
+    os.environ['GRADIENT_ACCESS_TOKEN'] = st.secrets["GRADIENT_ACCESS_TOKEN"]
+    os.environ['GRADIENT_WORKSPACE_ID'] = st.secrets["GRADIENT_WORKSPACE_ID"]
+    
     llm = GradientBaseModelLLM(base_model_slug="llama2-7b-chat", max_tokens=400)
 
     embed_model = GradientEmbedding(
