@@ -27,13 +27,6 @@ def main():
         with st.chat_message(message["role"], avatar = message['avatar']):
             st.markdown(message["content"])
 
-    # database = create_datastax_connection()
-    with open("app_token.json") as f:
-        secrets = json.load(f)
-
-    os.environ['GRADIENT_ACCESS_TOKEN'] = secrets["gradient"]["token"]
-    os.environ['GRADIENT_WORKSPACE_ID'] = secrets["gradient"]["workspece"]
-
     llm = GradientBaseModelLLM(base_model_slug="llama2-7b-chat", max_tokens=400)
 
     embed_model = GradientEmbedding(
